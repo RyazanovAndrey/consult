@@ -98,35 +98,8 @@ body{
     column-gap: 40px;
 }
 
-.menu-link {
-    position: relative;
-    display: block;
-    padding-bottom: 10px;
-    transition: .3s;
-}
-
-.menu-link:hover{
+.menu-link.active-link {
     color: var(--color2);
-}
-
-.menu-link::before{
-    position: absolute;
-    content: '';
-    height: 3px;
-    background-color: var(--color2);
-    bottom: 0;
-    left: 0;
-    width: 0;
-    border-radius: 10px;
-    transition: .3s;
-}
-
-.menu-link.active-link{
-    color: var(--color2);
-}
-
-.menu-link.active-link::before{
-    width: 50%;
 }
 
 .menu-tel {

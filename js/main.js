@@ -1,5 +1,6 @@
 const header = document.querySelector('.header')
 const btnTop = document.querySelector('.btn-top')
+const sections = document.querySelectorAll('section')
 
 window.addEventListener('scroll', () => {
     const currentY = window.scrollY
@@ -9,31 +10,40 @@ window.addEventListener('scroll', () => {
     btnShow(currentY)
 })
 
-function activeHeader(currentY){
-    if(currentY > header.offsetHeight){
+function activeHeader(currentY) {
+    if (currentY > header.offsetHeight) {
         header.classList.add('active')
-    }else{
+    } else {
         header.classList.remove('active')
     }
 }
 
-function activeLink(currentY){
-    document.querySelectorAll('section').forEach(item => {
-        if(currentY >= item.offsetTop - 250){
-            document.querySelector('.active-link').classList.remove('active-link')
-            document.querySelector(`a[href="#${item.id}"]`).classList.add('active-link')
-        }else if(item.getBoundingClientRect().top + 150 < window.innerHeight){
-            item.classList.add('show-sec')
-        }else{
-            item.classList.remove('show-sec')
+function activeLink(currentY) {
+    sections.forEach(item => {
+
+        const currentAttr = item.getAttribute('id')
+
+        if (currentY >= item.offsetTop) {
+
+            const activeLink = document.querySelector('.menu-link.active-link ')
+            if (activeLink) {
+                activeLink.classList.remove('active-link')
+            }
+
+            const nextActiveLink = document.querySelector(`[href="#${currentAttr}"]`)
+            if (nextActiveLink) {
+                nextActiveLink.classList.add('active-link');
+            }
         }
+
+
     })
 }
 
-function btnShow(currentY){
-    if(currentY >= document.body.clientHeight / 2){
+function btnShow(currentY) {
+    if (currentY >= document.body.clientHeight / 2) {
         btnTop.classList.add('show')
-    }else{
+    } else {
         btnTop.classList.remove('show')
     }
 }
@@ -58,7 +68,7 @@ btn.forEach(item => {
 })
 
 document.addEventListener('click', (event) => {
-    if(event.target == popup || event.target == closeBtn){
+    if (event.target == popup || event.target == closeBtn) {
         document.querySelector('.popup').classList.remove('show')
         document.body.style.paddingRight = '0px'
         document.body.classList.remove('stop-scroll')
@@ -92,26 +102,26 @@ const swiper = new Swiper('.slider .swiper', {
     loop: true,
     slidesPerView: 4,
     spaceBetween: 20,
-  
+
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
 
     breakpoints: {
         992: {
             slidesPerView: 4,
             spaceBetween: 20
-          },
+        },
         576: {
-          slidesPerView: 2,
-          spaceBetween: 20
+            slidesPerView: 2,
+            spaceBetween: 20
         },
         360: {
             slidesPerView: 1.5
         }
-      }
-    
-  
-  });
+    }
+
+
+});
 
