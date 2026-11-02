@@ -50,6 +50,7 @@ btn.forEach(item => {
     item.addEventListener('click', () => {
 
         document.body.style.paddingRight = padPix + 'px'
+        header.style.paddingRight = padPix + 'px'
         popup.classList.add('show')
         document.body.classList.add('stop-scroll')
     })

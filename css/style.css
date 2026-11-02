@@ -5,6 +5,7 @@
     --color1: #05091D;
     --color2: #C32A7C;
     --color3: #FAFAFA;
+    --color-desc: grey;
 
     --desktop: 1200px;
     --laptop: 992px;
@@ -72,7 +73,7 @@ body{
 .header {
     position: fixed;
     width: 100%;
-    padding-block: 15px;
+    padding-block: 20px;
     background-color: #fff;
     transition: .3s;
     z-index: 99;
@@ -80,7 +81,7 @@ body{
 }
 
 .header.active{
-    box-shadow: 0 5px 10px #00000015;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.082);
 }
 
 .wrapper {
@@ -253,7 +254,7 @@ body{
 }
 
 .card-text {
-    color: var(--color1);
+    color: var(--color-desc);
 }
 
 .card:hover{
@@ -286,13 +287,14 @@ body{
 }
 
 .about-text {
-    color: var(--color1);
+    color: var(--color-desc);
 }
 .about-sub {
     padding: 40px;
     background: var(--color3);
     border-radius: 20px;
     margin-block: 50px;
+    color: var(--color-desc);
 }
 
 .about-title{
@@ -357,6 +359,7 @@ body{
 
 .workers-job{
     font-size: 14px;
+    color: var(--color-desc);
 }
 
 /* Ques */
