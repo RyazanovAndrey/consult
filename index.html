@@ -54,10 +54,10 @@
                         <h1 class="home-title">Вирішення юридичних питань у найкоротші терміни</h1>
                         <h2 class="home-sub">АК Симохін та партнери</h2>
                         <p class="home-text">Наша команда ходитиме за вас до суду, повністю самостійно вестиме справу, захищатиме і робитиме весь бюрократичний біль за вас.</p>
-                        <a href="#!" class="btn">Замовити консультацію</a>
+                        <a href="#" class="btn btn-main">Замовити консультацію</a>
                     </div>
                     <div class="home-right">
-                        <img src="./img/home-img.png" alt="">
+                        <img src="./img/home-img.png" alt="" class="image-animation">
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
             <div class="container">
                 <h2 class="why-title title">Чому ми?</h2>
                 <div class="why-wrapper">
-                    <div class="card">
+                    <div class="card card-1">
                         <svg class="svg-ico-1">
                             <use href="./img/svg-sprite.svg#svg-ico-1"></use>
                         </svg>
@@ -76,7 +76,7 @@
                             <p class="card-text">Ми працюємо успішно в цій сфері більше 5 років</p>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card card-2">
                         <svg class="svg-ico-1">
                             <use href="./img/svg-sprite.svg#svg-ico-2"></use>
                         </svg>
@@ -85,7 +85,7 @@
                             <p class="card-text">Індивідуальний та зважений підхід до кожної проблеми</p>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card card-3">
                         <svg class="svg-ico-1">
                             <use href="./img/svg-sprite.svg#svg-ico-3"></use>
                         </svg>
@@ -101,7 +101,7 @@
         <section class="about" id="about">
             <div class="container">
                 <div class="about-wrapper">
-                    <div><img src="./img/about.jpg" alt=""></div>
+                    <div><img src="./img/about.jpg" alt="" class="image-animation"></div>
                     <div class="about-content">
                         <div class="about-title title">Про нас</div>
                         <p class="about-text">Молода, але досвідчена комада юристів, яка об'єднала понад 10 досвідчених співробітників зі стажем не менше 5 років, кожен із яких виграв понад 20 справ. Ми забезпечуємо комплексний юридичний супровід у широкому спектрі правових питань</p>
@@ -230,22 +230,22 @@
             <div class="container">
                 <h2 class="ques-title title">Які питання ми розглядаємо</h2>
                 <div class="ques-wrapper">
-                    <div class="ques-card">
+                    <div class="ques-card ques-1">
                         <img src="./img/ques-3.jpg" alt="">
                         <div class="ques-box">
                             <div class="ques-head">Громадянські суперечки</div>
                             <div class="ques-text">Розбіжності між громадянами, юридичними особами чи державними органами, що виникають через порушення чи оскарження
                             майнових та особистих немайнових прав.</div>
                         </div>
-                    </div>
-                    <div class="ques-card">
+                    </div> 
+                    <div class="ques-card ques-2">
                         <img src="./img/ques-2.jpg" alt="">
                         <div class="ques-box">
                             <div class="ques-head">Захист прав споживачів</div>
                             <div class="ques-text">Система заходів, яка гарантує кожному громадянину право на купівлю якісних товарів та отримання безпечних послуг</div>
                         </div>
                     </div>
-                    <div class="ques-card">
+                    <div class="ques-card ques-3">
                         <img src="./img/ques-1.jpg" alt="">
                         <div class="ques-box">
                             <div class="ques-head">Банківські суперечки</div>
@@ -253,7 +253,7 @@
                             умов фінансових договорів або порушення норм законодавства.</div>
                         </div>
                     </div>
-                    <div class="ques-card">
+                    <div class="ques-card ques-4">
                         <img src="./img/ques-1.jpg" alt="">
                         <div class="ques-box">
                             <div class="ques-head">Земельні суперечки</div>
@@ -261,7 +261,7 @@
                             самоврядування щодо володіння, користування або розпорядження земельними ділянками.</div>
                         </div>
                     </div>
-                    <div class="ques-card">
+                    <div class="ques-card ques-5">
                         <img src="./img/ques-2.jpg" alt="">
                         <div class="ques-box">
                             <div class="ques-head">Житлові суперечки</div>
@@ -269,7 +269,7 @@
                             розпорядження чи управління житловою нерухомістю.</div>
                         </div>
                     </div>
-                    <div class="ques-card">
+                    <div class="ques-card ques-6">
                         <img src="./img/ques-3.jpg" alt="">
                         <div class="ques-box">
                             <div class="ques-head">Арбітражні суперечки</div>
@@ -314,6 +314,7 @@
 
     <a href="#" class="btn-top"><img src="./img/to-top.svg" alt=""></a>
 
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
 </body>

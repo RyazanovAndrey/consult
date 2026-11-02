@@ -35,8 +35,6 @@ function activeLink(currentY) {
                 nextActiveLink.classList.add('active-link');
             }
         }
-
-
     })
 }
 
@@ -125,3 +123,18 @@ const swiper = new Swiper('.slider .swiper', {
 
 });
 
+const animation = ScrollReveal({
+    origin: 'bottom',
+    distance: '30px',
+    duration: 1000,
+    delay: 300,
+    easing: 'ease-out'
+})
+
+
+animation.reveal('.home-title, .home-sub, .home-text, .btn-main', { interval: 100 })
+animation.reveal('.why-title, .card-1, .card-2, .card-3', { interval: 200 })
+animation.reveal('.about-title, .about-text, .about-sub, .btn', { interval: 200 })
+animation.reveal('.workers-title, .swiper', { interval: 200 })
+animation.reveal('.ques-title, .ques-1, .ques-2, .ques-3, .ques-4, .ques-5, .ques-6', { interval: 200 })
+animation.reveal('.contacts-left h3, .contacts-left p, .contacts-soc, .contacts-right', { interval: 200 })
