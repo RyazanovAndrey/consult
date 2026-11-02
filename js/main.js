@@ -1,6 +1,9 @@
-const header = document.querySelector('.header')
-const btnTop = document.querySelector('.btn-top')
-const sections = document.querySelectorAll('section')
+const header = document.querySelector('.header'),
+    btnTop = document.querySelector('.btn-top'),
+    sections = document.querySelectorAll('section'),
+    btnMain = document.querySelectorAll('.btn-main'),
+    popupWindow = document.querySelector('.popup'),
+    closeBtn = document.querySelectorAll('.close')
 
 window.addEventListener('scroll', () => {
     const currentY = window.scrollY
@@ -11,7 +14,7 @@ window.addEventListener('scroll', () => {
 })
 
 function activeHeader(currentY) {
-    if (currentY > header.offsetHeight) {
+    if (currentY >= 100) {
         header.classList.add('active')
     } else {
         header.classList.remove('active')
@@ -48,31 +51,28 @@ function btnShow(currentY) {
 
 // Popup
 
-const btn = document.querySelectorAll('.btn')
-const popup = document.querySelector('.popup')
-const closeBtn = document.querySelector('.close')
+const paddingLeftCurrent = window.innerWidth - document.documentElement.clientWidth
 
-const padPix = window.innerWidth - document.documentElement.clientWidth
-
-btn.forEach(item => {
+btnMain.forEach(item => {
     item.addEventListener('click', () => {
-
-        document.body.style.paddingRight = padPix + 'px'
-        header.style.paddingRight = padPix + 'px'
-        popup.classList.add('show')
-        document.body.classList.add('stop-scroll')
+        togglePipup(true)
     })
-
 })
 
-document.addEventListener('click', (event) => {
-    if (event.target == popup || event.target == closeBtn) {
-        document.querySelector('.popup').classList.remove('show')
-        document.body.style.paddingRight = '0px'
-        document.body.classList.remove('stop-scroll')
-    }
+closeBtn.forEach(item => {
+    item.addEventListener('click', (event) => {
+        if (event.target.classList.contains('close')) {
+            togglePipup(false)
+        }
+    })
 })
 
+function togglePipup(value) {
+    popupWindow.classList.toggle('show', value)
+    document.body.style.overflow = value ? 'hidden' : ''
+    document.body.style.paddingRight = value ? paddingLeftCurrent + 'px' : '0px'
+    header.style.paddingRight = value ? paddingLeftCurrent + 'px' : '0px'
+}
 
 // Adaptive
 
@@ -119,8 +119,6 @@ const swiper = new Swiper('.slider .swiper', {
             slidesPerView: 1.5
         }
     }
-
-
 });
 
 const animation = ScrollReveal({
@@ -128,13 +126,14 @@ const animation = ScrollReveal({
     distance: '30px',
     duration: 1000,
     delay: 300,
-    easing: 'ease-out'
+    easing: 'ease-out',
+    reset: true
 })
 
 
 animation.reveal('.home-title, .home-sub, .home-text, .btn-main', { interval: 100 })
 animation.reveal('.why-title, .card-1, .card-2, .card-3', { interval: 200 })
-animation.reveal('.about-title, .about-text, .about-sub, .btn', { interval: 200 })
+animation.reveal('.about-title, .about-text, .about-sub, .btn-main', { interval: 200 })
 animation.reveal('.workers-title, .swiper', { interval: 200 })
 animation.reveal('.ques-title, .ques-1, .ques-2, .ques-3, .ques-4, .ques-5, .ques-6', { interval: 200 })
 animation.reveal('.contacts-left h3, .contacts-left p, .contacts-soc, .contacts-right', { interval: 200 })

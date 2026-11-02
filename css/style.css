@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 :root{
     --color1: #05091D;
     --color2: #C32A7C;
@@ -75,12 +74,11 @@ body{
     width: 100%;
     padding-block: 20px;
     background-color: #fff;
-    transition: .3s;
     z-index: 99;
 }
 
 .header.active{
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.082);
+    border-bottom: 1px solid #ddd;
 }
 
 .wrapper {
@@ -135,8 +133,6 @@ body{
     font-weight: 500;
 }
 
-.home-text{}
-
 .btn {
     display: inline-block;
     padding: 20px 40px;
@@ -154,12 +150,7 @@ body{
     color: var(--color1);
 }
 
-.home-right img{
-
-}
-
 /* Why us */
-
 
 .why {
     margin-top: 150px;
@@ -482,7 +473,7 @@ body{
 .popup {
     position: fixed;
     inset: 0;
-    background-color: #000000ad;
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 99;
     opacity: 0;
     visibility: hidden;
