@@ -274,13 +274,12 @@ body{
 .workers-card{
     border-radius: 20px;
     overflow: hidden;
+    border: 1px solid #ddd;
 }
 
 .workers-block{
     background-color: var(--color3);
     padding: 20px;
-    display: flex;
-    column-gap: 5px;
 }
 
 .workers-name{
@@ -291,7 +290,12 @@ body{
 }
 
 .workers-job{
+    font-size: 16px;
+}
+
+.worker-desc {
     font-size: 14px;
+    margin-top: 10px;
     color: var(--color-desc);
 }
 
