@@ -275,6 +275,8 @@ body{
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
 }
 
 .workers-block{
@@ -291,12 +293,14 @@ body{
 
 .workers-job{
     font-size: 16px;
+    min-height: 60px;
 }
 
 .worker-desc {
     font-size: 14px;
     margin-top: 10px;
     color: var(--color-desc);
+    margin-top: auto;
 }
 
 /* Ques */
